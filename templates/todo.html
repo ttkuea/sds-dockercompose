@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <title>SDS-TODO App</title>
+    <h1>TODO LIST</h1>
+
+    <form action="/new" method="POST">
+        <input type="text" name="name"></input>
+        <input type="text" name="description"></input>
+        <input type="submit" name="submit_btn" value="Submit"></input>
+    </form>
+
+    <h2>Lists</h2>
+    <div class="lists">
+        {% for item in items %}
+        <div>
+            <strong>{{ item.name }}</strong> : {{ item.description }}
+        </div>
+    {% endfor %}
+    </div>
+    
+
+    <style>
+        h1 {
+            color: red;
+            font-family: monospace;
+            font-size: 30px;
+        }
+
+        h2 {
+            color: blue;
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        .lists {
+            font-family: monospace;
+        }
+
+        form {
+            font-family: monospace;
+            font-size: 20px;
+        }
+    </style>
+</html>
